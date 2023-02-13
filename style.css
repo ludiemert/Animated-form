@@ -1,0 +1,200 @@
+:root {
+  --color-background: #4169E1;
+  --color-text: #F5FFFA;
+  --color-form: #B0C4DE;
+  --color-text-form: 	#4682B4;
+  --color-outline: #000080;
+  --color--btn-form:#000080;
+  --color-circ: rgba(255, 255, 255, 0.15);
+
+
+  font-size: 62.5%; /* 1rem = 10px*/
+}
+
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+  font-family: "Verdana", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  background: linear-gradient(0, #120c56, #000000)
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 { 
+  font-size: 2.9rem;
+  letter-spacing: 0.5rem;
+  margin: 2rem 0;
+  color: var(--color-text);
+}
+
+form {
+  margin: 2rem 0;
+  background-color: var(--color-form);
+  padding: 3rem 5.5rem;
+  border-radius: 1rem;
+}
+
+form .input-block {
+  margin-botton: 2rem;  
+}
+
+form .input-block label {
+  font-size: 1.7rem;
+  color: darkslateblue;
+ 
+}
+
+form .input-block input {
+  width: 100%;
+  display: block;
+  margin-top: 8px;
+  padding: 7px;
+  font-size: 3rem;
+  color: var( --color-text-form);
+  border-radius: 1.5rem;
+  outline-color:var(--color-outline);
+}
+
+form .btn-login {
+  display: block;
+  min-width: 120px;
+  border: none;
+  background-color: var(--color--btn-form);
+  color: var(--color-text);
+  border-radius: 1.5rem;
+  font-size: 1.7rem;
+  margin: auto;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* form appears */
+form {
+  overflow: hidden;
+  animation-name: fade 0.2s;
+}
+
+form .input-block:nth-child(1) {
+  animation: move 500ms;
+}
+
+
+form .input-block:nth-child(2) {
+  animation: move 400ms;
+  animation-delay: 100ms;
+  animation-fill-mode: backwards;
+}
+
+
+form .btn-login {
+  animation: move 400ms;
+  animation-delay: 250ms;
+  animation-fill-mode: backwards;
+
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes move {
+  from {
+    opacity: 0;
+    transform: translateX(-35%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/*fade form*/
+.form-hide {
+  animation: down 1.2s forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/*Vibrate fomulation*/
+
+form.validate-error {
+  animation: vibrate 300ms linear, fade paused;
+  animation-iteration-count: 2;
+}
+
+@keyframes vibrate {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  35% {
+    transform: translateX(-15%);
+  }
+  70% {
+    transform: translateX(15%);
+  }
+}
+
+/*squares*/
+
+body { 
+  overflow: hidden;
+}
+
+.squares li {
+  width: 40px;
+  height: 40px;
+  //border-radius: 50%;
+  background-color: var(--color-circ);
+  display: block;
+  position: absolute;
+  botton: -40px;
+  //animation-direction: alternate;
+  animation: circle 3s infinite alternate;
+}
+
+@keyframes circle {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-800px) rotate(960deg);
+  }
+
+}
