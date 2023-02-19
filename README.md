@@ -1,7 +1,9 @@
 # Animated-form
-Stage 8 of Explorer rocketseat, a challenge to create a Project with the learning from the course.
+Stage 9 of Explorer rocketseat, a challenge to create a Project with the learning from the course.
 
 #  Animated login form
+
+<img src="./form.png"> 
 
 
 ## Project:
